@@ -1,0 +1,135 @@
+$font-stack:    Helvetica, sans-serif;
+$primary-color: #333;
+$secondary-color:rgb(141, 137, 137);
+$border-color:blue;
+
+// body
+//   {
+//     font: 100% $font-stack;
+//     color: $primary-color;
+//   }
+
+svg{
+  color: blue;
+}
+
+// li::before {
+//   content: url("/static/icons/arrow-right-short.svg");
+//   background: lightgray;
+//   border-radius: 1ch;
+//   padding-inline: 1ch;
+//   margin-inline-end: 1ch;
+// }
+
+
+// dd{
+//   display: list-item;
+//   list-style-type: url("/static/icons/arrow-right-short.svg");
+// }
+
+.container{
+  color: $primary-color;
+  height: 200px;
+  #header{
+    border-bottom: solid;
+    border-width: 1px;
+    padding: 10px;
+    #header-left{
+      // background-color: black;
+      color: $primary-color;
+      width: 50%;
+      p{
+
+          // border-left: solid $border-color;//$primary-color;
+          border-radius: 10px;
+          background-color: rgba(134, 134, 240, 0.082);
+          font-size: 10px;
+          // color: $secondary-color;
+          // width: 50%;
+          padding-left: 20px;
+          // padding-right: 0px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          padding-right: 10px;
+
+      }
+    }
+    #header-right{
+      // background-color:rgba(129, 117, 236, 0.171);
+      font-size: 10px;
+      // border-radius: 5px;
+      color: $secondary-color;
+      width: 50%;
+      padding-left: 20px;
+      padding-top: 20px;
+      p{
+        a{
+          text-decoration: none;
+        }
+        img{
+          width: 10px;
+        }
+        margin-bottom: 5px;
+        
+      }
+    }
+  }
+
+  .row{
+    margin-top: 10px;
+    .element-left{
+      width: 50%;
+      #head{
+        color: $primary-color;
+        border-left: solid 5px $border-color;
+        padding-left: 10px;
+      }
+  
+      #body{
+        color:$primary-color;
+        padding-left: 10px;
+        
+  
+        span{
+          font-size: 15px;
+          color: $secondary-color;
+        }
+        p{
+          font-size: 12px;
+          margin: 0px;
+          padding-left: 10px;
+        }
+      }
+    }
+
+    .element-right{
+      width: 50%;
+      #head{
+        color: $primary-color;
+        border-left: solid 5px $border-color;
+        padding-left: 10px;
+      }
+  
+      #body{
+        color:$primary-color;
+        padding-left: 10px;
+
+        h6{
+          border-bottom: solid 1px $border-color;
+          display:inline-block;
+        }
+  
+        span{
+          font-size: 15px;
+          color: $secondary-color;
+        }
+        p{
+          font-size: 12px;
+          margin: 0px;
+        }
+      }
+
+    }
+    
+  }
+}    

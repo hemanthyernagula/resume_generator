@@ -1,0 +1,92 @@
+svg {
+  color: blue;
+}
+
+.container {
+  color: #333;
+  height: 200px;
+}
+.container #header {
+  border-bottom: solid;
+  border-width: 1px;
+  padding: 10px;
+}
+.container #header #header-left {
+  color: #333;
+  width: 50%;
+}
+.container #header #header-left p {
+  border-radius: 10px;
+  background-color: rgba(134, 134, 240, 0.082);
+  font-size: 10px;
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+}
+.container #header #header-right {
+  font-size: 10px;
+  color: #8d8989;
+  width: 50%;
+  padding-left: 20px;
+  padding-top: 20px;
+}
+.container #header #header-right p {
+  margin-bottom: 5px;
+}
+.container #header #header-right p a {
+  text-decoration: none;
+}
+.container #header #header-right p img {
+  width: 10px;
+}
+.container .row {
+  margin-top: 10px;
+}
+.container .row .element-left {
+  width: 50%;
+}
+.container .row .element-left #head {
+  color: #333;
+  border-left: solid 5px blue;
+  padding-left: 10px;
+}
+.container .row .element-left #body {
+  color: #333;
+  padding-left: 10px;
+}
+.container .row .element-left #body span {
+  font-size: 15px;
+  color: #8d8989;
+}
+.container .row .element-left #body p {
+  font-size: 12px;
+  margin: 0px;
+  padding-left: 10px;
+}
+.container .row .element-right {
+  width: 50%;
+}
+.container .row .element-right #head {
+  color: #333;
+  border-left: solid 5px blue;
+  padding-left: 10px;
+}
+.container .row .element-right #body {
+  color: #333;
+  padding-left: 10px;
+}
+.container .row .element-right #body h6 {
+  border-bottom: solid 1px blue;
+  display: inline-block;
+}
+.container .row .element-right #body span {
+  font-size: 15px;
+  color: #8d8989;
+}
+.container .row .element-right #body p {
+  font-size: 12px;
+  margin: 0px;
+}
+
+/*# sourceMappingURL=style.css.map */

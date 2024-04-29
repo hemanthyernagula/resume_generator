@@ -36,35 +36,45 @@ my_content = {
     },
     "body": {
         "block1":{
+            "align": "element-left",
+            "style_width": "width: 100%;",
             "type": "introduction",
             "title": "Executive Summary",
-            "value": [
-                ("2 years exprience in developming Machine Learning, Deep Learning models.", right_arrow_icon),
-                ("Hands on experience with NLP projects.", right_arrow_icon),
-                ("Worked with advanced NLP models like Attention Mechanism.", right_arrow_icon),
-                ("Worked with HuggingFace pretrained models for sentiment analysis.", right_arrow_icon),
-                ("Proficient in data extraction and data manipulation using Python libraries like Pandas, regular expressions.", right_arrow_icon),
-                ("Experience with data preparation using sklearn python package.", right_arrow_icon),
-                ("Experience with automating tasks like generating analytical reports and scheduling emails with crontab.", right_arrow_icon),
-                ("Worked with PyTorch data loaders and creating data pipeline for training and testing a neural network model.", right_arrow_icon),
-                ("Worked on building Flask API's around the ML/DL models.", right_arrow_icon),
-                ("Exposed to docker containers and containerizing the python applications.", right_arrow_icon),
-            ]
+            "value": """Experienced NLP professional with 3 years of expertise in advanced NLP models, including Attention
+            Mechanism, proficient in leveraging HuggingFace pretrained models for fine-tuning llms using PEFT concepts.
+            Skilled in data extraction, manipulation, and preparation using Python libraries like Pandas and regular
+            expressions. Automates tasks, generates analytical reports, and schedules emails with crontab. Creates
+            efficient data pipelines using PyTorch data loaders for training and testing neural network models.
+            Experienced in building Flask APIs around ML/DL models and containerizing applications with Docker for
+            seamless deployment. Additional experience includes integrating Asterisk PBX with real-time SIP connections
+            and leveraging Python AGI for NLP techniques to understand speech in call scenarios.""",
         },
         "block2":{
+            "align": "element-left",
             "type": "experience",
             "title": "Experience",
             "value": [
                 {
                     "company_name": "Gnani Ai",
-                    "period": "Nov 2020 to Present",
+                    "period": "Nov 2020 to April 2024",
                     "projects": [{
+                        "title": 'Agent Assistant',
+                        "aspects": [
+                            ("Prompt fine tuning to get desired output from LLM's", right_arrow_icon),
+                            ("Comparing the results from different model outputs.", right_arrow_icon),
+                            ("Preparing data for fine-tuning LLM's.", right_arrow_icon),
+                            ("Lora, QLora fine-tuning.", right_arrow_icon),
+                            ("Containerizing the finetuned model for deployment.", right_arrow_icon),
+                            ("Tracking the model with the frameworks like MLFlow.", right_arrow_icon)
+                        ]
+                        },
+                        {
                         "title": "Inverse Text Normalization(ITN)",
                         "aspects": [                        
                                     ("Writing Python code to generate data that is appropriate for ITN model.", right_arrow_icon),
                                     ("Training ITN model with generated data.", right_arrow_icon),
                                     ("Post processing the results of the ITN model predictions", right_arrow_icon),
-                                    ("Observing results of the model and making required changes in the data to train rebust ITN model.", right_arrow_icon),
+                                    ("Observing results of the model and making required changes in the data to train robust ITN model.", right_arrow_icon),
                                     ("Creating the image and containerizing the application using docker.", right_arrow_icon),
                         ]
                     },
@@ -78,31 +88,55 @@ my_content = {
                         ]
                         
                         },
-                        {
-                        "title": 'Voice Bot(Feedback Bot)',
-                        "aspects": [
-                            ("Understanding the flows designed by other team and creating chat bot.", right_arrow_icon),
-("Analyzing the conversation data and building binary classifier models.", right_arrow_icon),
-("Exposing the model to an rest api.", right_arrow_icon),
-("Writing python code to generate hourly/EOD stats and setting up crontab to hit client emails with the generated stats.", right_arrow_icon),
-                    ]
-                        }
+                        
                     ]
                 }
             ]
         },
-        "block_right":{
+        "block3":{
+            "align": "element-right",
             "type": "skills",
             "title": "Skills",
             "value": [
                 {
-                    "Machine Learning": [
-                        ("KNN", right_arrow_icon),
-                        ("Logistic Regression", right_arrow_icon),
-                        ("Linear Regression", right_arrow_icon),
-                        ("SVM", right_arrow_icon),
-                        ("Ensemble Models", right_arrow_icon),
-                    ]
+                    "Machine Learning":{
+                    "align": "left-obj",
+                    "details":[
+                    ("KNN", right_arrow_icon),      
+                    ("Logistic Regression", right_arrow_icon),      
+                    ("Linear Regression", right_arrow_icon),      
+                    ("SVM", right_arrow_icon),      
+                    ("Ensemble Models", right_arrow_icon),  
+                    ],},
+
+                    "NLP Techniques":{
+                    "align":"right-obj",
+                    "details":[
+                    ("Lora Fine Tuning", right_arrow_icon),      
+                    ("Model Quantization", right_arrow_icon),      
+                    ("RAG Operations", right_arrow_icon),      
+                    ("Prompt Fine Tuning", right_arrow_icon),  
+                    ]},
+
+                    "Python Libraries":{
+                    "align":"left-obj",
+                    "details":[
+                    ("SKLearn", right_arrow_icon),      
+                    ("Pandas", right_arrow_icon),      
+                    ("PyTorch", right_arrow_icon),      
+                    ("Flask", right_arrow_icon),      
+                    ("Rasa", right_arrow_icon),  
+                    ]},
+
+                    "Tools":{
+                    "align":"right-obj",
+                    "details":[
+                    ("Jupyter Notebook", right_arrow_icon),      
+                    ("VsCode", right_arrow_icon),      
+                    ("Git", right_arrow_icon),      
+                    ("Docker", right_arrow_icon),      
+                    ("MongoDb", right_arrow_icon),
+                    ]},
                 }
             ]
         }
@@ -116,4 +150,5 @@ def home():
     
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0",debug=True)
+    app.run(host="localhost",debug=True,)
+

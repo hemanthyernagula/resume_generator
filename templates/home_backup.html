@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="{{url_for('static', filename='css/style.css')}} " rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+  <title>Resume</title>
+</head>
+
+<body>
+
+
+  <div class="container">
+
+    <div class="row" id="header">
+
+      <div id="header-left">
+        <h2>{{ data.header.title.value }}</h2>
+
+      </div>
+      <div id="header-right">
+
+
+        {% for tag, values in data.header.contact_info.items()%}
+        {% if tag == 'click_able' %}
+        {% for each_value in values %}
+        <p>
+          {{ each_value[1]|safe }}
+          <a href="{{each_value[0]}}"> &emsp; {{each_value[0]}}</a>
+        </p>
+        {% endfor %}
+        {% elif tag == 'non_clickable' %}
+        {% for each_value in values %}
+        <p>
+          {{ each_value[1] | safe }}
+          &emsp; {{each_value[0]}}
+        </p>
+        {% endfor %}
+        {% endif %}
+        {% endfor %}
+
+      </div>
+
+    </div>
+    <!-- Executive Summary -->
+
+    <br>
+    <div class="row" id="element">
+
+      <div class="element-left" style="width: 100%;">
+        <div id="head">
+          <h5>Executive Summary</h5>
+        </div>
+        <div id="body">
+
+          <p>
+          <ol style="font-size: 12px; padding-top: 0px; margin-top: 0px;">
+            {{ data.body.block1.value | safe }}
+            <!-- Experienced NLP professional with 2.5+ years of expertise in advanced NLP models, including Attention
+            Mechanism, proficient in leveraging HuggingFace pretrained models for finetuning llms using peft concepts.
+            Skilled in data extraction, manipulation, and preparation using Python libraries like Pandas and regular
+            expressions. Automates tasks, generates analytical reports, and schedules emails with crontab. Creates
+            efficient data pipelines using PyTorch data loaders for training and testing neural network models.
+            Experienced in building Flask APIs around ML/DL models and containerizing applications with Docker for
+            seamless deployment. Additional experience includes integrating Asterisk PBX with real-time SIP connections
+            and leveraging Python AGI for NLP techniques to understand speech in call scenarios. -->
+
+          </ol>
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- <br> -->
+
+    <!-- End Of Executive Summary -->
+    <div class="row" id="element">
+
+      <div class="element-left">
+        <div id="head">
+          <h5>Experience</h5>
+        </div>
+
+        <div id="body">
+          <h6>Gnani Ai
+            <span id="meta"> (Nov 2020 to Present)</span>
+          </h6>
+          <p><strong>Project title: </strong>Inverse Text Normalization(ITN)<br>
+            &emsp;Key aspects were:
+          <ol style="font-size: 10px; padding-top: 0px; margin-top: 0px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+            </svg>
+            Writing Python code to generate data that is appropriate for ITN model.<br>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+            </svg>
+            Training ITN model with generated data.<br>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+            </svg>
+            Post processing the results of the ITN model predictions<br>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+            </svg>
+            Observing results of the model and making required changes in the data to train rebust ITN model.<br>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+            </svg>
+            Creating the image and containerizing the application using docker.</li><br>
+          </ol>
+          </p>
+          <!-- Projects -->
+          <!-- <p><strong>Project title: </strong>Real Time Voice Bot<br>
+              &emsp;Key aspects were:
+              <ol style="font-size: 10px; padding-top: 0px; margin-top: 0px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
+                </svg>
+                Creating soft PBX server like asterisk.<br>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
+                </svg>
+                Integrating SIP PRI connection with asterisk server.<br>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
+                </svg>
+                Connecting the python AGI module with asterisk.<br>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
+                </svg>
+                Integrating with ASR system with asterisk through MRCP.<br>
+              </ol>
+            </p> -->
+
+          <!-- Rasa Feedback bot -->
+          <p><strong>Project title: </strong>Voice Bot(Feedback Bot)<br>
+            &emsp;Key aspects were:
+          <ol style="font-size: 10px; padding-top: 0px; margin-top: 0px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+            </svg>
+            Understanding the flows designed by other team and creating chat bot.<br>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+            </svg>
+            Analyzing the conversation data and building binary classifier models.<br>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+            </svg>
+            Exposing the model to an rest api.<br>
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+            </svg>
+            Writing python code to generate hourly/EOD stats and setting up crontab to hit client emails with the
+            generated stats.</li><br>
+          </ol>
+          </p>
+        </div>
+
+      </div>
+      <div class="element-right">
+        <div id="head">
+          <h5>Skills</h5>
+
+        </div>
+        <div id="body" class="row">
+          <div class="left-obj" style="width: 50%;">
+            <h6>Machine Learning</h6>
+            <p>
+            <ol style="font-size: 10px; padding-top: 0px; margin-top: 0px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+              </svg>
+              KNN<br>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+              </svg>
+              Logistic Regression<br>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+              </svg>
+              Linear Regression<br>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+              </svg>
+              SVM<br>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+              </svg>
+              Ensemble Models<br>
+            </ol>
+            </p>
+          </div>
+          <div class="right-obj" style="width: 50%;">
+            <h6>NLP Techniques</h6>
+            <p>
+            <ol style="font-size: 10px; padding-top: 0px; margin-top: 0px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+              </svg>
+              Lora Fine Tuning<br>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+              </svg>
+              Model Quantization<br>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+              </svg>
+              RAG Operations<br>
+
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+              </svg>
+              Prompt Fine Tuning<br>
+
+            </ol>
+            </p>
+          </div>
+        </div>
+
+        <div id="body" class="row">
+          <div class="left-obj" style="width: 50%;">
+            <h6>Python Libraries</h6>
+            <p>
+            <ol style="font-size: 10px; padding-top: 0px; margin-top: 0px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+              </svg>
+              SKLearn<br>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+              </svg>
+              Pandas<br>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+              </svg>
+              PyTorch<br>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+              </svg>
+              Flask<br>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+              </svg>
+              Rasa<br>
+            </ol>
+            </p>
+          </div>
+          <div class="right-obj" style="width: 50%;">
+            <h6>Tools</h6>
+            <p>
+            <ol style="font-size: 10px; padding-top: 0px; margin-top: 0px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+              </svg>
+              Jupyter Notebook<br>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+              </svg>
+              VsCode<br>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+              </svg>
+              Git<br>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+              </svg>
+              Docker<br>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+              </svg>
+              MongoDb<br>
+
+
+            </ol>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="element-left" style="width: 100%;  margin-top: 0px;">
+        <div id="head">
+          <h5>Pet Projects</h5>
+        </div>
+        <div id="body" class="row">
+          <h6>Movie Tag Prediction
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-tag-fill"
+              viewBox="0 0 16 16">
+              <path
+                d="M2 1a1 1 0 0 0-1 1v4.586a1 1 0 0 0 .293.707l7 7a1 1 0 0 0 1.414 0l4.586-4.586a1 1 0 0 0 0-1.414l-7-7A1 1 0 0 0 6.586 1H2zm4 3.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+            </svg>
+          </h6>
+          <strong style="font-size: 10px;">Description</strong>
+          <p style="font-size: 10px; padding-top: 0px; padding-left: 35px; margin-top: 0px;">
+            Movie Tag Prediction is a multilabel machine learning problem used to
+            predict the tag for a given summary of the movie. The data is taken from the
+            Kaggle website, data consist of movie title, summary and it is tagging
+            (Genre).<br>
+          </p>
+
+          <strong style="font-size: 10px;">Role and Responsibilities</strong>
+          <ol style="font-size: 10px; padding-top: 0px; padding-left: 50px; margin-top: 0px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+            </svg>
+            Performed EDA with matplotlib and removing unwanted data.<br>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+            </svg>
+            Cleaning data using regular expressions.<br>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+            </svg>
+            Featurizing data with <strong>NLP</strong> featurization techniques like <strong>CountVectorization,TfIdf
+              Vectorization, Glove Vectorization along with ngrams, char ngrams</strong> etc.<br>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+            </svg>
+            Selecting best features among all the features.<br>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+            </svg>
+            Training ML models like <strong>Logistic Regression, SVM, XGBoost</strong>.<br>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+            </svg>
+            Selecting best models among the trained models.<br>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+            </svg>
+            Building an API around the model using <strong>Flask frame work</strong>.
+          </ol>
+        </div>
+        <br><br>
+        <div id="body" class="row">
+          <h6>Language Translator
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-pen-fill"
+              viewBox="0 0 16 16">
+              <path
+                d="M13.498.795l.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001z" />
+            </svg>
+          </h6>
+          <strong style="font-size: 10px;">Description</strong>
+          <p style="font-size: 10px; padding-top: 0px; padding-left: 35px; margin-top: 0px;">
+            Translator is a sequence-sequence attention based deep learning
+            model that is trained publicly available english to telugu data. In this model I have experimented with
+            sequence models like RNN, LSTM, Attention.<br>
+          </p>
+
+          <strong style="font-size: 10px;">Role and Responsibilities</strong>
+          <ol style="font-size: 10px; padding-top: 0px; padding-left: 50px; margin-top: 0px;">
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+            </svg>
+            Preprocessing the data using PyTorch data pipe lines.<br>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+            </svg>
+            Experimenting with different ways of encoder-decoder data models<br>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+            </svg>
+            Experimenting with different attention mechanisms<br>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+            </svg>
+            Hyperparameter tuning the model with Tensorboard<br>
+          </ol>
+        </div>
+
+
+      </div>
+    </div>
+
+    <br>
+    <div class="row">
+      <div class="element-left" style="width: 100%;">
+        <div id="head">
+          <h5>Education</h5>
+        </div>
+        <div class="row">
+          <div class="ele-1" style="width: 30%;">
+            <div id="body">
+              <h6 style="font-size: 10px;">BTech - <span style="font-size: 10px;">Mechanical Engineering</span></h6>
+              <h6 style="font-size: 10px;">CMR Engineering College - Hyderabad</h6>
+              <span style="font-size: 10px; margin-top: 0px;">2014-2018</span>
+            </div>
+          </div>
+          <div class="ele-1" style="width: 30%;">
+            <div id="body">
+              <h6 style="font-size: 10px;">Intermediate - <span style="font-size: 10px;">MPC</span></h6>
+              <h6 style="font-size: 10px;">NRI Junior College - Hyderabad</h6>
+              <span style="font-size: 10px;">2012-2014</span>
+            </div>
+          </div>
+          <div class="ele-1" style="width: 40%;">
+            <div id="body">
+              <h6 style="font-size: 10px;">School - <span style="font-size: 10px;">SSC</span></h6>
+              <h6 style="font-size: 10px;">Brilliant Grammar High School - Hyderabad</h6>
+              <span style="font-size: 10px;">2012</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+
+    <div class="row">
+      <div class="element-left" style="width: 100%;  margin-top: 0px;">
+        <div id="head">
+          <h5>Certifications</h5>
+        </div>
+        <div id="body" class="row">
+          <p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+            </svg>
+            Applied Ai Course
+          </p>
+
+          <p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z" />
+            </svg>
+            Generative AI w ith Large Language age Models
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="element-left" style="width: 100%;">
+        <div id="head">
+          <h5>Declaration</h5>
+        </div>
+        <div id="body">
+          <p style="font-size: 10px; padding-top: 0px; padding-left: 10px; margin-top: 0px;">I hereby declare that the
+            details provided above are true according to my knowledge.</p>
+        </div>
+        <div class="row" style="margin-top: 100px;">
+          <div class="element-left">
+            <p style="font-size: 10px; padding-top: 0px; padding-left: 10px; margin-top: 0px;">
+              Date
+            </p>
+          </div>
+          <div class="element-right">
+            <p style="font-size: 10px; padding-top: 0px; padding-left: 10px; margin-top: 0px; text-align: right;">
+              Hemanth
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+    crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+    -->
+
+</body>
+
+</html>
